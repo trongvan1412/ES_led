@@ -1,0 +1,56 @@
+A51 MACRO ASSEMBLER  NHAPNHAY                                                             04/17/2020 23:12:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN nhapnhay.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE nhapnhay.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 00h
+0000                   2             loop:
+0000 759000            3                     mov p1,#00h
+0003 120020            4                     lcall delay
+0006 7590FF            5                     mov p1,#0ffh
+                       6                     
+0009 75A000            7                     mov p2,#00h
+000C 120020            8                     lcall delay
+000F 120020            9                     lcall delay
+0012 75A0FF           10                     mov p2,#0ffh
+                      11                      
+0015 75B000           12                     mov p3,#00h
+0018 120020           13                     lcall delay
+001B 75B0FF           14                     mov p3,#0ffh
+                      15                      
+001E 80E0             16                     sjmp loop
+0020                  17     delay: 
+0020 7806             18                     mov r0,#06h
+0022 79FF             19             h1: mov r1,#0ffh
+0024 7AFF             20             h2: mov r2,#0ffh
+0026 DAFE             21             h3: djnz r2,h3
+0028 D9FA             22                     djnz r1,h2
+002A D8F6             23                     djnz r0,h1
+002C 22               24                     ret 
+                      25     end
+A51 MACRO ASSEMBLER  NHAPNHAY                                                             04/17/2020 23:12:39 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0020H   A   
+H1 . . . . . . . .  C ADDR   0022H   A   
+H2 . . . . . . . .  C ADDR   0024H   A   
+H3 . . . . . . . .  C ADDR   0026H   A   
+LOOP . . . . . . .  C ADDR   0000H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
